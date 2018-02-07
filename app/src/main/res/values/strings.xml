@@ -24,4 +24,6 @@
     <string name="user_sign_out">Cerrar Sesion</string>
     <string name="user_delete">Eliminiar Cuenta</string>
 
+    <string name="multiplayer_user_name">Name Multiplayer</string>
+
 </resources>
