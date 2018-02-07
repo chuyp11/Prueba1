@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1012415380631",
+    "firebase_url": "https://examen-universidad.firebaseio.com",
+    "project_id": "examen-universidad",
+    "storage_bucket": "examen-universidad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012415380631:android:16dc14b571ff377c",
+        "android_client_info": {
+          "package_name": "com.magnumgeek.examenuniversidad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012415380631-n66ualu0ssmv66qrhr3eel385420rqse.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.magnumgeek.examenuniversidad",
+            "certificate_hash": "f899c0533fb4ee12cd68b26f079ff3fb9d2ffa0d"
+          }
+        },
+        {
+          "client_id": "1012415380631-5jln94gaqj5e6aphplbfmi6g5umlg0iq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN2xK_34moSfpjGlyZ1NvC6aSpP15NNck"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012415380631-5jln94gaqj5e6aphplbfmi6g5umlg0iq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ExamenUniversidad</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="estudia">Estudia</string>
+    <string name="estudia_descripcion">Selecciona la materia y el tema que quieras repasar</string>
+    <string name="practica">Practica</string>
+    <string name="practica_descripcion">Pon a prueba lo aprendido con preguntas de la materia y
+        tema que selecciones</string>
+    <string name="examen">Examen</string>
+    <string name="examen_descripcion">Una prueba con la cantidad de preguntas y materias que
+        selecciones</string>
+    <string name="multiplayer">Multijugador</string>
+    <string name="multiplayer_description">Juega contra otro jugador que tambien se encuentre
+        conectado</string>
+
+    <string name="user_name">Nombre</string>
+    <string name="user_email">Email</string>
+    <string name="user_sign_in">Iniciar Sesion</string>
+    <string name="user_sign_out">Cerrar Sesion</string>
+    <string name="user_delete">Eliminiar Cuenta</string>
+
+</resources>
