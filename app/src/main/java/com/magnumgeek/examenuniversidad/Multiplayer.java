@@ -16,6 +16,8 @@ public class Multiplayer extends AppCompatActivity {
 
     private DatabaseReference multiplayerRef;
     private String userName, userId;
+    private DataBaseMultiplayer dataBaseMultiplayer;
+    private Query query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,13 @@ public class Multiplayer extends AppCompatActivity {
 
         multiplayerRef = database.getReference("multiplayer");
 
-        Query listName = multiplayerRef;
+        dataBaseMultiplayer = new DataBaseMultiplayer("Lorena", "47");
+
+        multiplayerRef.child(userId).setValue(dataBaseMultiplayer);
+
+
+
+        /*Query listName = multiplayerRef;
 
 
         listName.addValueEventListener(new ValueEventListener() {
@@ -49,7 +57,12 @@ public class Multiplayer extends AppCompatActivity {
                     for (DataSnapshot hijo : postSnapshot.getChildren()){
                         Log.d(Constants.TAG, "hijo " + i);
                         Log.d(Constants.TAG, hijo.toString());
+                        Log.d(Constants.TAG, "getRef())");
+                        Log.d(Constants.TAG, String.valueOf(hijo.getRef()));
+                        Log.d(Constants.TAG, "getKey()");
                         Log.d(Constants.TAG, hijo.getKey());
+                        Log.d(Constants.TAG, "getValue())");
+                        Log.d(Constants.TAG, String.valueOf(hijo.getValue()));
                         i ++;
                     }
                 }
@@ -61,18 +74,63 @@ public class Multiplayer extends AppCompatActivity {
                 Log.d(Constants.TAG, "loadPost:onCancelled", databaseError.toException());
                 // ...
             }
-        });
+        });*/
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        multiplayerRef.child(userId).child(Constants.USER_NAME).setValue(userName);
+        //multiplayerRef.child(userId).child(Constants.USER_NAME).setValue(userName);
+
+        /*multiplayerRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });*/
+
+        query = multiplayerRef;
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Log.d(Constants.TAG, "hasChildren()");
+                Log.d(Constants.TAG, String.valueOf(dataSnapshot.hasChildren()));
+                Log.d(Constants.TAG, "getChildrenCount()");
+                Log.d(Constants.TAG, String.valueOf(dataSnapshot.getChildrenCount()));
+                int i = 1;
+                for (DataSnapshot hijo : dataSnapshot.getChildren()){
+                    DataBaseMultiplayer a = hijo.getValue(DataBaseMultiplayer.class);
+                    Log.d(Constants.TAG, a.userName);
+                    Log.d(Constants.TAG, "a.userName");
+                    Log.d(Constants.TAG, "hijo " + i);
+                    Log.d(Constants.TAG, hijo.toString());
+                    Log.d(Constants.TAG, "getRef())");
+                    Log.d(Constants.TAG, String.valueOf(hijo.getRef()));
+                    Log.d(Constants.TAG, "getKey()");
+                    Log.d(Constants.TAG, hijo.getKey());
+                    Log.d(Constants.TAG, "getValue())");
+                    Log.d(Constants.TAG, String.valueOf(hijo.getValue()));
+                    i ++;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
     public void onStop() {
         super.onStop();
         //multiplayerRef.child(userId).removeValue();
+
     }
 }
